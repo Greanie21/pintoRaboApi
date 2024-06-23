@@ -20,7 +20,9 @@ export async function getCockTailDbController(): Promise<IDrink[]> {
 
 function getCockTailFromFiles(letter: string) {
   // read the file and store it in a variable
-  const data = require("../assets/cock-tail-db/" + letter + ".json");
+  const data = require("../assets/cock-tail-db/" +
+    letter.toUpperCase() +
+    ".json");
 
   // extract the value of the key "drinks" and store it in a variable
   const drinks: IDrink[] = drinkFactory(data.drinks);
